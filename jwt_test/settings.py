@@ -32,7 +32,7 @@ DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE","False")=="True"
 import sys
 import dj_database_url
 
-ALLOWED_HOSTS = [os.getenv("DJANGO_ALLOWED_HOSTS","127.0.0.1, localhost").split(",")]
+ALLOWED_HOSTS = [os.getenv("DJANGO_ALLOWED_HOSTS","127.0.0.1, localhost, 194.36.88.16").split(",")]
 
 
 # Application definition
@@ -101,6 +101,9 @@ WSGI_APPLICATION = 'jwt_test.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+import dotenv
+dotenv.read_dotenv()
+
 if DEVELOPMENT_MODE is True:
     DATABASES = {
         "default": {
